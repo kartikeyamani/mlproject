@@ -27,10 +27,4 @@ logging.basicConfig(
 
 # Test code (Optional: you can delete this after testing)
 if __name__ == "__main__":
-
-    try:
-        a=1/0
-    except Exception as e:
-        logging.info("It's a zero division error")
-        raise CustomException(e,sys)
-    logging.info("Logging has started successfully.")
+    pass
