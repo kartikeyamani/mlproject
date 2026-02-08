@@ -9,6 +9,8 @@ from data_transformation import Data_Transformation
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from model_trainer import ModelTrainer
+
 @dataclass
 class DataIngestionConfig:
     train_data_path:str=os.path.join("artifacts","train.csv")
@@ -48,7 +50,11 @@ if __name__=="__main__":
     data_transformation= Data_Transformation()
     train_data,test_data,preprocessor_filepath=data_transformation.initiate_data_transformation(trainpath,testpath)
 
+    modeltrainer=ModelTrainer()
+    best_r2_score=modeltrainer.initiate_model_trainer(train_data,test_data)
+    print(best_r2_score)
 
+    
 
 
 
